@@ -1,1 +1,3 @@
-import mongoose from "./connection"
+import mongoose from "./connection.js"
+
+console.log("Hello")
