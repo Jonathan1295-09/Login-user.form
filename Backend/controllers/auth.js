@@ -21,7 +21,18 @@ router.post("/signup", async (req, res) => {
 
 //login post
 router.post("/login", async (req, res) => {
+    try{
+    const {username, password} = req.body
+    const user = await User.find({username})
+    if (user) {
+             }else{
+                    res.status(400).json({error: "User does not exist"})
+                }
 
-})
+    } catch(error){
+        res.status(400).json({error})
+    }
+});
+
 //logout post
 router.post("/logout", async (req, res) => {})
