@@ -2,6 +2,9 @@ import express from "express"
 import User from "../models/user"
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const router = express.Router()
 
@@ -27,7 +30,8 @@ router.post("/login", async (req, res) => {
     if (user) {
         const passwordCheck = await bcrypt.compare(password, user.password)
         if(passwordCheck){
-            
+            const payload = {username}
+            const token = await jwt.sign(payload, process.env.SECRET)
         }else{
             res.status(400).json({error: "Password does not match"})
         }
