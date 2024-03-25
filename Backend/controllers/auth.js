@@ -12,15 +12,15 @@ const router = express.Router()
 router.post("/signup", async (req, res) => {
     try{
     //hash password
-    req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSelt(10))
+    req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10))
     //user
     const user = await User.create(req.body)
     //Response
     // const response = { username: user.username, role: user.role};
-    res.json({status: "User created"})
+    res.json({status: "User created"})      
     } catch(error){
-        res.status(400).json({error})
-}
+        res.status(400).json({ error });
+    }
 });
 
 //login post
