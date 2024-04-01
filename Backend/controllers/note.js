@@ -31,7 +31,10 @@ router.get("/:id", async (req,res) => {
 ///Create///
 router.post("/", async (req,res) => {
     try {
-
+        const username = req.payload.username;
+        req.body.username = username
+        const notes = await Note.create(req.body);
+        res.json(notes);
     } catch(error){
         res.status(400).json({error})
     }
