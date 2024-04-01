@@ -20,7 +20,9 @@ router.get("/", async (req,res) => {
 ///Show////
 router.get("/:id", async (req,res) => {
     try {
-
+        const username = req.payload.username
+        const notes = await Note.find({username, id:req.params.id});
+        res.json(notes);
     } catch(error){
         res.status(400).json({error})
     }
