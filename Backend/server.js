@@ -4,6 +4,7 @@ import cors from "cors"
 import dotenv from 'dotenv'
 import cookieParser from "cookie-parser"
 import authRouter from "./controllers/auth.js"
+import router from "./controllers/note.js"
 
 dotenv.config()
 

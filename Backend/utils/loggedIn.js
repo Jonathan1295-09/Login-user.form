@@ -14,3 +14,5 @@ async function loggedIn (req, res, next) {
             res.status(400).json({error});
         }
 }
+
+export default loggedIn
