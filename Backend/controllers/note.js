@@ -33,7 +33,7 @@ router.post("/", async (req,res) => {
     try {
         const username = req.payload.username;
         req.body.username = username
-        const notes = await Note.create(req.body);
+        const notes = await Note.findByIdAndUpdate(req.params.id, req.body, {new: true},);
         res.json(notes);
     } catch(error){
         res.status(400).json({error})
@@ -43,7 +43,10 @@ router.post("/", async (req,res) => {
 ///Update///
 router.put("/:id", async (req,res) => {
     try {
-
+        const username = req.payload.username;
+        req.body.username = username
+        const notes = await Note.create(req.body);
+        res.json(notes);
     } catch(error){
         res.status(400).json({error})
     }
@@ -52,7 +55,10 @@ router.put("/:id", async (req,res) => {
 ///Delete///
 router.delete("/:id", async (req,res) => {
     try {
-
+        const username = req.payload.username;
+        req.body.username = username
+        const notes = await Note.deleteOne({id: req.params.id, username});
+        res.json(notes);
     } catch(error){
         res.status(400).json({error})
     }
