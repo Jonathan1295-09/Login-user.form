@@ -45,7 +45,7 @@ router.put("/:id", async (req,res) => {
     try {
         const username = req.payload.username;
         req.body.username = username
-        const notes = await Note.(req.body);
+        const notes = await Note.findByIdAndUpdate(req.params.id, req.body);
         res.json(notes);
     } catch(error){
         res.status(400).json({error})
