@@ -10,8 +10,8 @@ router.use(loggedIn)
 router.get("/", async (req,res) => {
     try {
         const username = req.payload.username
-        const notes = await Note.find({username});
-        res.json(notes);
+        const note = await Note.find({username});
+        res.json(note);
     } catch(error){
         res.status(400).json({error})
     }
@@ -21,8 +21,8 @@ router.get("/", async (req,res) => {
 router.get("/:id", async (req,res) => {
     try {
         const username = req.payload.username
-        const notes = await Note.find({username, id:req.params.id});
-        res.json(notes);
+        const note = await Note.findOne({username, id:req.params.id});
+        res.json(note);
     } catch(error){
         res.status(400).json({error})
     }
@@ -33,8 +33,8 @@ router.post("/", async (req,res) => {
     try {
         const username = req.payload.username;
         req.body.username = username
-        const notes = await Note.findByIdAndUpdate(req.params.id, req.body, {new: true},);
-        res.json(notes);
+        const note = await Note.create(req.body);
+        res.json(note);
     } catch(error){
         res.status(400).json({error})
     }
@@ -45,7 +45,7 @@ router.put("/:id", async (req,res) => {
     try {
         const username = req.payload.username;
         req.body.username = username
-        const notes = await Note.create(req.body);
+        const notes = await Note.(req.body);
         res.json(notes);
     } catch(error){
         res.status(400).json({error})

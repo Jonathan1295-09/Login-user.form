@@ -23,6 +23,7 @@ app.get("/test", (req,res) =>{
 })
 
 app.use("/auth", authRouter)
+app.use("/note", router)
 
 //listen
 const PORT = process.env.PORT
