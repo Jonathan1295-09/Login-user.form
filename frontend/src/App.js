@@ -7,6 +7,7 @@ function App() {
     <div className="App">
      <h1>The App</h1>
      <Link to="/signup"><button>signup</button></Link>
+     <Link to="/login"><button>login</button></Link>
      <Outlet/>
     </div>
   );
