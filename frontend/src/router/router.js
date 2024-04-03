@@ -9,8 +9,9 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/logout" />
         <Route path="/dashboard" element= {<h1>Dashboard</h1>}>
             <Route path="" element={<h1>index</h1>}/>
+            <Route path="/create" element={<h1>Create</h1>}/>
             <Route path="/note/:id" element={<h1>Show</h1>}/>
-            
+
         </Route>
         <Route path="/login" element= {<h1>login</h1>}/>
     </Route>
