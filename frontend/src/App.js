@@ -8,6 +8,7 @@ function App() {
      <h1>The App</h1>
      <Link to="/signup"><button>signup</button></Link>
      <Link to="/login"><button>login</button></Link>
+     <Link to="/logout"><button>logout</button></Link>
      <Outlet/>
     </div>
   );
