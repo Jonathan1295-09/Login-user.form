@@ -1,11 +1,10 @@
 import { Outlet, Link } from 'react-router-dom';
 import './App.css';
-import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-     <h1>The App</h1>
+     <h1>Scrible</h1>
      <Link to="/signup"><button>signup</button></Link>
      <Link to="/login"><button>login</button></Link>
      <Link to="/logout"><button>logout</button></Link>
