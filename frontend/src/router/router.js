@@ -4,13 +4,14 @@ import Login from "../pages/login"
 import Signup from "../pages/signup"
 import { loginAction } from "./actions"
 import { signupAction } from "./actions"
+import { logoutAction } from "./actions"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
     <Route path="/" element = {<App/>}>
-        <Route path="/login" element= {<Login/>}/>
-        <Route path="/signup" element= {<Signup/>}/>
-        <Route path="/logout" />
+        <Route path="/login" element= {<Login/>} action={loginAction}/>
+        <Route path="/signup" element= {<Signup/>} action={signupAction}/>
+        <Route path="/logout" action={<logoutAction/>}/>
         <Route path="/dashboard/" element= {<h1>Dashboard</h1>}>
             <Route path="" element={<h1>index</h1>}/>
             <Route path="create" element={<h1>Create</h1>}/>

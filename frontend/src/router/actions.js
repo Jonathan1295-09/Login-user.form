@@ -45,3 +45,16 @@ export const loginAction = async ({request}) => {
 
     redirect("/dashboard")
 }
+
+export const logoutAction = async ({request}) => {
+    const Response = await fetch(url + "/auth/logout", {
+        method: "post",
+    })
+
+    if (Response.status === 400){
+        alert("failed logout")
+        return redirect("/dashbord")
+    }
+
+    redirect("/")
+}
