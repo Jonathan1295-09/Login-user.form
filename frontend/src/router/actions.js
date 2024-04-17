@@ -15,4 +15,9 @@ export const signupAction = async ({request}) => {
         headers,
         body: JSON.stringify(user)
     })
+
+    if(Response.status === 400){
+        alert("failed signup")
+        return redirect("/signup")
+    }
 }
