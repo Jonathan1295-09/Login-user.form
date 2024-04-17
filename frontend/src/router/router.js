@@ -1,6 +1,7 @@
 import {createBrowserRouter, createRoutesFromElements, Route} from "react-router-dom"
 import App from "../App"
 import Login from "../pages/login"
+import Signup from "../pages/signup"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
