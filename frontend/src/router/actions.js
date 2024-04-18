@@ -1,5 +1,5 @@
-import url from "./url"
-import { redirect } from "react-router-dom"
+import url from "./url";
+import { redirect } from "react-router-dom";
 import headers from "./headers"
 
 export const signupAction = async ({request}) => {
@@ -10,13 +10,13 @@ export const signupAction = async ({request}) => {
         password: formData.get("password")
     }
 
-    await fetch(url + "/auth/signup", {
+   const response = await fetch(url + "/auth/signup", {
         method: "post",
         headers,
         body: JSON.stringify(user)
     })
 
-    if(Response.status === 400){
+    if(response.status === 400){
         alert("failed signup")
         return redirect("/signup")
     }
@@ -32,13 +32,13 @@ export const loginAction = async ({request}) => {
         password: formData.get("password")
     }
 
-    await fetch(`${url}/auth/login`, {
+    const response = await fetch(url + "/auth/login", {
         method: "post",
         headers,
         body: JSON.stringify(user)
     })
 
-    if(Response.status === 400){
+    if(response.status === 400){
         alert("failed login")
         return redirect("/login")
     }
@@ -46,12 +46,12 @@ export const loginAction = async ({request}) => {
      return redirect("/dashboard")
 }
 
-export const logoutAction = async ({request}) => {
-    const Response = await fetch(url + "/auth/logout", {
+export const logoutAction = async () => {
+    const response = await fetch(url + "/auth/logout", {
         method: "post",
     })
 
-    if (Response.status === 400){
+    if (response.status === 400){
         alert("failed logout")
         return redirect("/dashbord")
     }

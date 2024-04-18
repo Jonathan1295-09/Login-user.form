@@ -2,9 +2,7 @@ import {createBrowserRouter, createRoutesFromElements, Route} from "react-router
 import App from "../App"
 import Login from "../pages/login"
 import Signup from "../pages/signup"
-import { loginAction } from "./actions"
-import { signupAction } from "./actions"
-import { logoutAction } from "./actions"
+import { loginAction, signupAction,logoutAction} from "./actions"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
