@@ -21,7 +21,7 @@ export const signupAction = async ({request}) => {
         return redirect("/signup")
     }
 
-    redirect("/login")
+   return redirect("/login")
 }
 
 export const loginAction = async ({request}) => {
@@ -32,7 +32,7 @@ export const loginAction = async ({request}) => {
         password: formData.get("password")
     }
 
-    await fetch(url + "/auth/login", {
+    await fetch(`${url}/auth/login`, {
         method: "post",
         headers,
         body: JSON.stringify(user)
@@ -43,7 +43,7 @@ export const loginAction = async ({request}) => {
         return redirect("/login")
     }
 
-    redirect("/dashboard")
+     return redirect("/dashboard")
 }
 
 export const logoutAction = async ({request}) => {
@@ -56,5 +56,5 @@ export const logoutAction = async ({request}) => {
         return redirect("/dashbord")
     }
 
-    redirect("/")
+    return redirect("/")
 }
