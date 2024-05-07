@@ -3,6 +3,7 @@ import App from "../App"
 import Login from "../pages/login"
 import Signup from "../pages/signup"
 import { loginAction, signupAction,logoutAction} from "./actions"
+import Dashboard from "../pages/dashboard"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
