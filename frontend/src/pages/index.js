@@ -6,7 +6,7 @@ export default function Index(){
 
     return <div>
         {notes.map((note) => <div>
-            <h1></h1>
+            <h1>{note.title}</h1>
         </div>)}
     </div>
 }
