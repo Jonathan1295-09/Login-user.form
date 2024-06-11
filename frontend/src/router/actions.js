@@ -13,6 +13,7 @@ export const signupAction = async ({request}) => {
    const response = await fetch(url + "/auth/signup", {
         method: "post",
         headers,
+        credentials: "include",
         body: JSON.stringify(user)
     })
 
