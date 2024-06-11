@@ -1,7 +1,7 @@
-import { useRouteLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom"
 
 export default function Index(){
-    const notes = useRouteLoaderData()
+    const notes = useLoaderData()
     console.log(notes)
 
     return <div>
