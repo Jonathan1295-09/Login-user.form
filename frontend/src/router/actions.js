@@ -13,7 +13,6 @@ export const signupAction = async ({request}) => {
    const response = await fetch(url + "/auth/signup", {
         method: "post",
         headers,
-        credentials: "include",
         body: JSON.stringify(user)
     })
 
@@ -36,6 +35,7 @@ export const loginAction = async ({request}) => {
     const response = await fetch(url + "/auth/login", {
         method: "post",
         headers,
+        credentials: "include",
         body: JSON.stringify(user)
     })
 
