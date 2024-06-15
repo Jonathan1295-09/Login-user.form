@@ -6,6 +6,7 @@ import { loginAction, signupAction,logoutAction} from "./actions"
 import Dashboard from "../pages/dashboard"
 import { indexLoader } from "./loaders"
 import Index from "../pages"
+import Create from "../pages/create"
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -16,10 +17,10 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/logout" action={logoutAction}/>
         <Route path="/dashboard/" element= {<Dashboard/>}>
             <Route path="" element={<Index/>} loader={indexLoader}/>
-            <Route path="create" element={<h1>Create</h1>}/>
-                <Route path=":id/" element={<h1>Show</h1>}>
-                    <Route path="update" element={<h1>update</h1>}/>
-                    <Route path="delete" element={<h1>delete</h1>}/>
+            <Route path="create" element={<Create/>}/>
+            <Route path=":id/" element={<h1>Show</h1>}>
+            <Route path="update" element={<h1>update</h1>}/>
+            <Route path="delete" element={<h1>delete</h1>}/>
                 </Route>
          </Route>
     </Route>
