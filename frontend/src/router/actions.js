@@ -59,3 +59,26 @@ export const logoutAction = async () => {
 
     return redirect("/")
 }
+
+export const createAction = async ({request}) => {
+    const formData =  await request.formData()
+
+    const note = {
+        tile: formData.get("title"),
+        message: formData.get("message")
+    }
+
+    const response = await fetch(url + "/note", {
+        method: "post",
+        headers,
+        credentials: "include",
+        body: JSON.stringify(note)
+    })
+
+    if(response.status === 400){
+        alert("failed to create")
+        return redirect("/dashboard")
+    }
+
+     return redirect("/dashboard")
+}
