@@ -64,7 +64,7 @@ export const createAction = async ({request}) => {
     const formData =  await request.formData()
 
     const note = {
-        tile: formData.get("title"),
+        title: formData.get("title"),
         message: formData.get("message")
     }
 
