@@ -12,6 +12,7 @@ export const indexLoader = async () => {
 
 export const showLoader = async ({params}) => {
     const id = params.id 
+
     const response = await fetch(url + `/note/${id}`, {
         credentials: "include"
     })
