@@ -6,7 +6,7 @@ export default function Index(){
 
     return <div>
         {notes.map((note) => <div>
-            <Link to={'/dashboard/${note._id}'}><h1>{note.title}</h1></Link>
+            <Link to={`/dashboard/${note._id}`}><h1>{note.title}</h1></Link>
         </div>)}
     </div>
 }
