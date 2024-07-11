@@ -22,10 +22,10 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path=":id/" element={<Show/>} loader={showLoader}>
             <Route path="update" element={<h1>update</h1>}/>
             <Route path="delete" element={<h1>delete</h1>}/>
-                </Route>
+             </Route>
          </Route>
     </Route>
     </>
-))
+));
 
 export default router
