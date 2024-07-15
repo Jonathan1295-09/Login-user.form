@@ -1,9 +1,7 @@
 import { useLoaderData, Link, Form } from "react-router-dom";
 
 export default function Show(){
-    const note = useLoaderData()
-  
-    
+    const note = useLoaderData();
     return  <section>
         <h2>{note.title}</h2>
         <p>{note.message}</p>

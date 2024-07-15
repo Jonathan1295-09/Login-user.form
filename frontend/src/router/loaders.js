@@ -1,4 +1,4 @@
-import url from "./url"
+import url from "./url";
 
 export const indexLoader = async () => {
     const response = await fetch(url + "/note",
